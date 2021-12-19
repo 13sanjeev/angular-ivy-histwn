@@ -1,0 +1,23 @@
+<div>
+  <h2>Popular courses</h2>
+  <!-- <button (click)="onSubmit()">View course list</button> -->
+</div>
+
+<!-- <div *ngIf="showCourseList">
+  <app-course-list></app-course-list>
+</div> -->
+<div><h3>Select a course to view</h3></div>
+<select #course (change)="cl.changeCourse(course.value)">
+  <option *ngFor="let course of cl.courses">
+    {{ course.name }}
+  </option>
+</select>
+<app-course-list #cl="courselist"></app-course-list>
+<div>
+  <table border="2">
+    <tr *ngFor="let c of cl.course">
+      <td>{{ c.name }}</td>
+      <td>{{ c.id }}</td>
+    </tr>
+  </table>
+</div>
