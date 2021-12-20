@@ -8,7 +8,14 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent {
   showCourseList: boolean = false;
 
+  message!: string;
+  //message = "hello"
+
   onSubmit() {
     this.showCourseList = true;
+  }
+
+  courseReg(cName: string) {
+    this.message = `you have successfully registered for ${cName} course`;
   }
 }

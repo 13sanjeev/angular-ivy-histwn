@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-course-list',
@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   exportAs: 'courselist',
 })
 export class CourseListComponent implements OnInit {
+  @Output() onRegister = new EventEmitter<string>();
+
+  registerCourse(courseName: string) {
+    this.onRegister.emit(courseName);
+    console.log(courseName);
+  }
+
   courses: any[] = [
     { id: '101', name: 'angular' },
     { id: '102', name: 'node js' },

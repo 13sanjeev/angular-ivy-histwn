@@ -6,8 +6,8 @@
 <!-- <div *ngIf="showCourseList">
   <app-course-list></app-course-list>
 </div> -->
-<div><h3>Select a course to view</h3></div>
-<select #course (change)="cl.changeCourse(course.value)">
+<div><h3>Select a course to register</h3></div>
+<!-- <select #course (change)="cl.changeCourse(course.value)">
   <option *ngFor="let course of cl.courses">
     {{ course.name }}
   </option>
@@ -20,4 +20,7 @@
       <td>{{ c.id }}</td>
     </tr>
   </table>
-</div>
+</div> -->
+<app-course-list (onRegister)="courseReg($event)"></app-course-list>
+<br /><br />
+<p *ngIf="message">{{ message }}</p>
