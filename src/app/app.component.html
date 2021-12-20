@@ -6,7 +6,7 @@
 <!-- <div *ngIf="showCourseList">
   <app-course-list></app-course-list>
 </div> -->
-<div><h3>Select a course to view</h3></div>
+<!-- <div><h3>Select a course to view</h3></div>
 <select #course (change)="cl.changeCourse(course.value)">
   <option *ngFor="let course of cl.courses">
     {{ course.name }}
@@ -20,4 +20,15 @@
       <td>{{ c.id }}</td>
     </tr>
   </table>
+</div> -->
+<h2>choose courses</h2>
+<div>
+  <select #course (change)="name=course.value">
+    <option></option>
+    <option>angular</option>
+    <option>typescript</option>
+    <option>react</option>
+    <option>node js</option>
+  </select>
 </div>
+<app-course-list [cName]="name"></app-course-list>

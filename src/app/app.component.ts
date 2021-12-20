@@ -7,6 +7,7 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   showCourseList: boolean = false;
+  name!: string;
 
   onSubmit() {
     this.showCourseList = true;
